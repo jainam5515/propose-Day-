@@ -1,47 +1,27 @@
-let noButtonMoved = false;
-
-// Handle Button Click
-document.querySelectorAll(".btn a").forEach((button) => {
-    button.onclick = (event) => {
-        event.preventDefault();
-
-        if (event.target.id.includes("noButton")) {
-            moveNoButton(event.target);
-            noButtonMoved = true;
-        }
-
-        if (!noButtonMoved) {
-            swapButtons();
-        }
-
-        showHeart(event.clientX, event.clientY);
-    };
+document.addEventListener("DOMContentLoaded", function () {
+    let noButton = document.getElementById("noButton") || document.getElementById("noButton2") || document.getElementById("noButton3");
+    
+    if (noButton) {
+        noButton.addEventListener("mouseover", moveNoButton);
+        noButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            moveNoButton();
+        });
+    }
 });
 
-// Move the "No" Button Randomly
-function moveNoButton(button) {
-    let x = Math.random() * window.innerWidth;
-    let y = Math.random() * window.innerHeight;
-    button.style.position = "absolute";
-    button.style.left = `${x}px`;
-    button.style.top = `${y}px`;
+// Function to Move the "No" Button Randomly
+function moveNoButton() {
+    let noButton = document.getElementById("noButton") || document.getElementById("noButton2") || document.getElementById("noButton3");
+    let x = Math.random() * (window.innerWidth - 100); 
+    let y = Math.random() * (window.innerHeight - 50);
+    
+    noButton.style.position = "absolute";
+    noButton.style.left = `${x}px`;
+    noButton.style.top = `${y}px`;
 }
 
-// Swap Button Texts
-function swapButtons() {
-    let yesButton = document.getElementById("yesButton");
-    let noButton = document.getElementById("noButton");
-
-    let tempText = yesButton.innerText;
-    yesButton.innerText = noButton.innerText;
-    noButton.innerText = tempText;
-
-    let tempHref = yesButton.href;
-    yesButton.href = noButton.href;
-    noButton.href = tempHref;
-}
-
-// Show Heart Animation
+// Show Floating Hearts on Click
 function showHeart(x, y) {
     const heart = document.createElement("div");
     heart.className = "heart";
