@@ -1,90 +1,134 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
-  }
-  
-  body {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffe5e5;
-  }
-  
-  .container {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background-size: 200% 200%;
+    animation: bgAnimation 6s infinite alternate;
+    overflow: hidden;
+}
+
+/* Animated Background */
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Main Container */
+.container {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     gap: 20px;
     max-width: 500px;
-    margin: 20px;
-  }
-  
-  .container .tenor-gif-embed {
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* GIF Styling */
+.container .tenor-gif-embed {
     max-width: 200px;
-  }
-  
-  .container .btn {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Section */
+.container .btn {
     display: flex;
     gap: 25px;
-  }
-  
-  .btn a {
+}
+
+/* Button Styling */
+.btn a {
     text-decoration: none;
-    color: #111;
-    background: #fff;
-    padding: 10px 25px;
+    color: white;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    padding: 12px 30px;
     border-radius: 8px;
-    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+    box-shadow: 0 5px 20px rgba(255, 64, 108, 0.5);
     font-weight: bold;
-    font-size: 16px;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-size: 18px;
+    transition: all 0.3s ease;
     display: inline-block;
     text-align: center;
     border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Button Hover Effect */
 .btn a:hover {
-    background: #111;
-    color: #fff;
-    transform: scale(1.05);
-    border: 2px solid #fff;
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(255, 64, 108, 0.7);
 }
 
+/* Button Click Effect */
 .btn a:active {
-    transform: scale(0.98);
-    box-shadow: 0.3rem 0.6rem 2rem hsl(0, 0%, 0%, 0.2);
+    transform: scale(0.95);
+    box-shadow: 0 5px 15px rgba(255, 64, 108, 0.3);
 }
+
+/* New Button (Initially Hidden) */
 #newButton {
-  display: none; /* Initially hidden */
-  top: 100px;
-  left: 100px;
+    display: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(135deg, #7f00ff, #e100ff);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    box-shadow: 0 5px 15px rgba(127, 0, 255, 0.5);
 }
-/* Heart Animation */
+
+/* New Button Hover Effect */
+#newButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(127, 0, 255, 0.7);
+}
+
+/* Floating Heart Animation */
 .heart {
-  position: absolute;
-  font-size: 42px;
-  color: red;
-  animation: heart-animation 1s ease-out;
-  opacity: 0;
-  transform: scale(0);
+    position: absolute;
+    font-size: 42px;
+    color: red;
+    animation: heart-animation 1.5s ease-out;
+    opacity: 0;
+    transform: scale(0);
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
 }
 
 @keyframes heart-animation {
-  0% {
-      transform: scale(0);
-      opacity: 1;
-  }
-  50% {
-      transform: scale(1.5);
-  }
-  100% {
-      transform: scale(1);
-      opacity: 0;
-  }
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
 }
