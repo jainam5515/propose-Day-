@@ -1,0 +1,21 @@
+function createHeartRain() {
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.classList.add("heart-rain");
+
+        // Random positioning
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.animationDuration = (Math.random() * 2 + 3) + "s"; // Random speed
+
+        document.body.appendChild(heart);
+
+        // Remove heart after animation
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }, 300); // New heart every 300ms
+}
+
+// Start the heart rain when page loads
+window.onload = createHeartRain;
