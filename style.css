@@ -1,37 +1,117 @@
+/* Reset Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Body Styling */
 body {
-	font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    animation: bgAnimation 5s infinite alternate;
+    overflow: hidden;
 }
 
+/* Animated Gradient Background */
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Login Form Styling */
 #login-form {
-	width: 50%;
-	margin: 40px auto;
-	padding: 20px;
-	border: 1px solid #ccc;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Input Field */
 #code {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 20px;
-	border: 1px solid #ccc;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: 0.3s;
 }
 
+#code:focus {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Submit Button */
 #submit-btn {
-	background-color: #4CAF50;
-	color: #fff;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(255, 64, 108, 0.5);
+    font-weight: bold;
 }
 
+/* Button Hover Effect */
 #submit-btn:hover {
-	background-color: #3e8e41;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 64, 108, 0.7);
 }
 
+/* Button Click Effect */
+#submit-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 15px rgba(255, 64, 108, 0.3);
+}
+
+/* Result Text */
 #result {
-	color: #666;
-	margin-top: 20px;
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Floating Heart Animation */
+.heart {
+    position: absolute;
+    font-size: 32px;
+    color: red;
+    animation: heart-float 2s ease-out infinite;
+    opacity: 0;
+    transform: scale(0);
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+}
+
+/* Keyframes for Floating Heart */
+@keyframes heart-float {
+    0% {
+        transform: translateY(0) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-40px) scale(1.5);
+    }
+    100% {
+        transform: translateY(-80px) scale(1);
+        opacity: 0;
+    }
 }
