@@ -1,4 +1,4 @@
-/* Reset Default Styles */
+/* AI Futuristic Design */
 * {
     margin: 0;
     padding: 0;
@@ -6,38 +6,55 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* Body Styling */
+/* Background with Glowing Animation */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    animation: bgAnimation 5s infinite alternate;
+    background: radial-gradient(circle, #1a1a2e, #0f3460);
     overflow: hidden;
+    animation: bgMove 10s infinite alternate;
 }
 
-/* Animated Gradient Background */
-@keyframes bgAnimation {
+/* Background Animation */
+@keyframes bgMove {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
 }
 
-/* Login Form Styling */
+/* Glassmorphism AI Login Box */
 #login-form {
-    width: 350px;
+    width: 400px;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 255, 0.2);
+    backdrop-filter: blur(20px);
     text-align: center;
     position: relative;
-    overflow: hidden;
+    color: white;
 }
 
-/* Input Field */
+/* Floating Heart Animation */
+.heart {
+    position: absolute;
+    font-size: 24px;
+    color: red;
+    animation: heart-float 2s ease-out infinite;
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Heart Animation */
+@keyframes heart-float {
+    0% { transform: translateY(0) scale(0); opacity: 1; }
+    50% { transform: translateY(-50px) scale(1.5); }
+    100% { transform: translateY(-100px) scale(1); opacity: 0; }
+}
+
+/* Futuristic Input Field */
 #code {
     width: 100%;
     padding: 12px;
@@ -45,73 +62,30 @@ body {
     border: none;
     border-radius: 8px;
     font-size: 16px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    box-shadow: 0 3px 10px rgba(0, 255, 255, 0.3);
     outline: none;
-    transition: 0.3s;
 }
 
-#code:focus {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Submit Button */
+/* Neon AI Button */
 #submit-btn {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
     font-size: 18px;
     transition: all 0.3s ease;
     display: block;
     width: 100%;
     margin-top: 10px;
     box-shadow: 0 5px 15px rgba(255, 64, 108, 0.5);
-    font-weight: bold;
 }
 
 /* Button Hover Effect */
 #submit-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 8px 20px rgba(255, 64, 108, 0.7);
-}
-
-/* Button Click Effect */
-#submit-btn:active {
-    transform: scale(0.95);
-    box-shadow: 0 5px 15px rgba(255, 64, 108, 0.3);
-}
-
-/* Result Text */
-#result {
-    color: white;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-/* Floating Heart Animation */
-.heart {
-    position: absolute;
-    font-size: 32px;
-    color: red;
-    animation: heart-float 2s ease-out infinite;
-    opacity: 0;
-    transform: scale(0);
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
-}
-
-/* Keyframes for Floating Heart */
-@keyframes heart-float {
-    0% {
-        transform: translateY(0) scale(0);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-40px) scale(1.5);
-    }
-    100% {
-        transform: translateY(-80px) scale(1);
-        opacity: 0;
-    }
 }
